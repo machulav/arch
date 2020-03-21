@@ -2,36 +2,41 @@
 
 ## Resources
 - https://wiki.archlinux.org/index.php/installation_guide
-- https://medium.com/@gevorggalstyan/how-to-install-arch-linux-on-virtualbox-93bc83ded692
 
-## Steps
-1. `fdisk -l`
-1. `fdisk /dev/sda`
-   - /dev/sda1 - 512M
-   - /dev/sda2 - 1G (Linux swap / Solaris)
-   - /dev/sda3 - 7.5G
-1. `mkfs.ext2 /dev/sda1`
-1. `mkswap /dev/sda2`
-1. `mkfs.ext4 /dev/sda3`
-1. `mount /dev/sda3 /mnt`
-1. `swapon /dev/sda2`
-1. `pacstrap /mnt base linux linux-firmware dhcpcd grub sudo gvim`
-1. `genfstab /mnt >> /mnt/etc/fstab`
-1. `arch-chroot /mnt`
-1. `vim /etc/locale.gen`
-   - Uncomment `en_US.UTF-8 UTF-8` and save the file
-1. `locale-gen`
-1. `echo "LANG=en_US.UTF-8"  > /etc/locale.conf`
-1. `ln -sf /usr/share/zoneinfo/Europe/Kiev /etc/localtime`
-1. `hwclock --systohc --utc`
-1. `echo "arch" > /etc/hostname`
-1. `passwd`
-1. `grub-install /dev/sda`
-1. `grub-mkconfig -o /boot/grub/grub.cfg`
-1. `systemctl enable dhcpcd`
-1. `useradd -m -G wheel vova`
-1. `passwd vova`
-1. `visudo`
-   - Find this line `# %wheel ALL=(ALL) ALL`, uncomment it and save the file
-1. `exit`
-1. `reboot`
+## Commands
+
+- `cfdisk`
+  - /dev/sda1 - 1G (Linux swap / Solaris)
+  - /dev/sda2 - 8G
+- `mkswap /dev/sda1`
+- `mkfs.ext4 /dev/sda2`
+- `mount /dev/sda2 /mnt`
+- `swapon /dev/sda1`
+- `pacstrap /mnt base linux linux-firmware dhcpcd grub sudo gvim`
+- `genfstab /mnt >> /mnt/etc/fstab`
+- `arch-chroot /mnt`
+- `vim /etc/locale.gen`
+  - Uncomment `en_US.UTF-8 UTF-8` and save the file
+- `locale-gen`
+- `echo "LANG=en_US.UTF-8"  > /etc/locale.conf`
+- `ln -sf /usr/share/zoneinfo/Europe/Kiev /etc/localtime`
+- `hwclock --systohc --utc`
+- `echo "arch" > /etc/hostname`
+- `vim /etc/hosts`
+  - Add the following content:
+    ```
+    127.0.0.1	  localhost
+    ::1		      localhost
+    127.0.1.1	  arch.localdomain	arch
+    ```
+- `passwd`
+- `grub-install /dev/sda`
+- `grub-mkconfig -o /boot/grub/grub.cfg`
+- `systemctl enable dhcpcd`
+- `useradd -m -G wheel vova`
+- `passwd vova`
+- `visudo`
+  - Find this line `# %wheel ALL=(ALL) ALL`, uncomment it and save the file
+- `exit`
+- Extract ISO
+- `reboot`
