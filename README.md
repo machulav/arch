@@ -1,4 +1,4 @@
 # Arch Linux setup
 
-- [Arch Installation](/docs/installation.md)
-- Apps Installation: [/install/01-apps.sh](/install/01-apps.sh)
+- [Install Arch on VirtualBox](/docs/arch.md)
+- [Install and configure apps](/docs/apps.md)

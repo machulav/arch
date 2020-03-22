@@ -1,10 +1,9 @@
-# Arch installation on VirtualBox
+# Install Arch on VirtualBox
 
 ## Resources
 - https://wiki.archlinux.org/index.php/installation_guide
 
-## Steps
-
+## Installation steps
 - Download Arch ISO
 - Create VM with attached ISO
   - 9GB
@@ -17,7 +16,7 @@
 - `swapon /dev/sda1`
 - `vim /etc/pacman.d/mirrorlist`
   - Move the geographically closest mirrors to the top of the list
-- `pacstrap /mnt base linux linux-firmware dhcpcd grub sudo gvim`
+- `pacstrap /mnt base linux linux-firmware base-devel dhcpcd grub gvim`
 - `genfstab /mnt >> /mnt/etc/fstab`
 - `arch-chroot /mnt`
 - `vim /etc/locale.gen`
