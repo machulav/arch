@@ -1,10 +1,14 @@
 #!/bin/sh
 
 # install apps
-pacman -S man-pages man-db zsh zsh-completions git openssh
+pacman -S man-pages man-db which zsh 
+# zsh-completions git openssh
+
+# make zsh a default shell
+chsh -s $(which zsh) vova
+chsh -s $(which zsh) root
 
 # install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # configure oh-my-zsh
 # TBD

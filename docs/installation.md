@@ -1,10 +1,13 @@
-# Installation
+# Arch installation on VirtualBox
 
 ## Resources
 - https://wiki.archlinux.org/index.php/installation_guide
 
-## Commands
+## Steps
 
+- Download Arch ISO
+- Create VM with attached ISO
+  - 9GB
 - `cfdisk`
   - /dev/sda1 - 1G (Linux swap / Solaris)
   - /dev/sda2 - 8G
@@ -12,6 +15,8 @@
 - `mkfs.ext4 /dev/sda2`
 - `mount /dev/sda2 /mnt`
 - `swapon /dev/sda1`
+- `vim /etc/pacman.d/mirrorlist`
+  - Move the geographically closest mirrors to the top of the list
 - `pacstrap /mnt base linux linux-firmware dhcpcd grub sudo gvim`
 - `genfstab /mnt >> /mnt/etc/fstab`
 - `arch-chroot /mnt`
@@ -38,5 +43,5 @@
 - `visudo`
   - Find this line `# %wheel ALL=(ALL) ALL`, uncomment it and save the file
 - `exit`
-- Extract ISO
+- Extract ISO from VM
 - `reboot`
