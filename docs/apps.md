@@ -78,18 +78,29 @@ EndSection
  
 Exit and login to start X and select Alt as a Mod1
 
----
-
-
+## XDG Autostart
 ```
-sudo pacman -S rofi
-yay -S polybar
-
+sudo pacman -S dex
+vim ~/.config/i3/config
 ```
 
-## git
+Add to the end of the file:
+
 ```
-TBD
+exec dex -ae i3
+```
+
+## virtualbox
+```
+sudo pacman -S virtualbox-guest-utils xf86-video-vmware
+```
+
+Select `virtualbox-guest-modules-arch`
+
+Enable shared clipboard on the server Virtual Box configuration
+
+```
+reboot
 ```
 
 ## Clean unused dependencies
