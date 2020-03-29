@@ -16,21 +16,31 @@ makepkg -si
 
 ## zsh
 ```
-yay -S zsh oh-my-zsh-git
+sudo pacman -S zsh
 chsh -s $(which zsh)
-touch ~/.zshrc
-vim ~/.zshrc
 ```
 
-Add the following content to the `~/.zshrc` file:
+## oh-my-zsh
 ```
-ZSH=/usr/share/oh-my-zsh/
-ZSH_THEME="robbyrussell"
-plugins=(
-  git
-)
-source $ZSH/oh-my-zsh.sh
+git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+```
+
+Enable vi mode by adding the following line to the end of `~/.zshrc`:
+
+```
+# Custom config
 bindkey -v
+```
+
+## oh-my-zsh powerlevel9k theme
+```
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+```
+
+Select the theme in `~/.zshrc`:
+```
+ZSH_THEME="powerlevel9k/powerlevel9k"
 ```
 
 ## i3
