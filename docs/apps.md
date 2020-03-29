@@ -35,7 +35,7 @@ bindkey -v
 
 ## i3
 ```
-sudo pacman -S xorg-server xorg-xinit xorg-xrandr i3-wm i3status termite
+sudo pacman -S xorg-server xorg-xinit xorg-xrandr i3-gaps i3status termite
 echo "exec i3" > ~/.xinitrc
 touch ~/.zprofile
 vim ~/.zprofile
@@ -49,7 +49,24 @@ if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]
 fi
 ```
 
-Run the commands:
+Run the command:
+
+```
+vim ~/.config/i3/config
+```
+
+Add the following content to the end of the file:
+
+```
+# i3-gaps
+for_window [class=".*"] border pixel 1
+gaps inner 10
+smart_borders on
+```
+
+Exit and login to start X and select Alt as a Mod1
+
+## Screen resolution
 
 ```
 sudo touch /etc/X11/xorg.conf.d/xorg.conf
@@ -75,8 +92,6 @@ Section "Screen"
         EndSubSection
 EndSection
 ```
- 
-Exit and login to start X and select Alt as a Mod1
 
 ## XDG Autostart
 ```
@@ -87,6 +102,7 @@ vim ~/.config/i3/config
 Add to the end of the file:
 
 ```
+# XDG autostart
 exec dex -ae i3
 ```
 
@@ -101,6 +117,12 @@ Enable shared clipboard on the server Virtual Box configuration
 
 ```
 reboot
+```
+
+## vifm
+
+```
+sudo pacman -S vifm
 ```
 
 ## Clean unused dependencies

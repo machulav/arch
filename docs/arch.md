@@ -4,17 +4,18 @@
 - https://wiki.archlinux.org/index.php/installation_guide
 
 ## Create VM
-- Download Arch ISO
-- Create VM with attached ISO
-  - 9GB
+Download Arch ISO
+
+Create VM with attached ISO
 
 ## Partition the disks
 ```
 cfdisk
 ```
 
-- /dev/sda1 - 1G (Linux swap / Solaris)
-- /dev/sda2 - 8G
+/dev/sda1 - 1G (Linux swap / Solaris)
+
+/dev/sda2 - 8G
 
 ## Format the partitions
 ```
