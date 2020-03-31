@@ -33,14 +33,18 @@ Enable vi mode by adding the following line to the end of `~/.zshrc`:
 bindkey -v
 ```
 
-## oh-my-zsh powerlevel9k theme
+## powerlevel9k
 ```
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+sudo pacman -Syu awesome-terminal-fonts
 ```
 
-Select the theme in `~/.zshrc`:
+Add config into `~/.zshrc`:
 ```
+POWERLEVEL9K_MODE='awesome-patched'
 ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
 ```
 
 ## i3
@@ -72,6 +76,12 @@ Add the following content to the end of the file:
 for_window [class=".*"] border pixel 1
 gaps inner 10
 smart_borders on
+```
+
+Replace i3bar config with the following:
+
+```
+TBD
 ```
 
 Exit and login to start X and select Alt as a Mod1

@@ -2,56 +2,57 @@
 
 ## Resources
 - https://wiki.archlinux.org/index.php/installation_guide
+- https://wiki.archlinux.org/index.php/VirtualBox
 
-## Create VM
+## 1. Create VM
 Download Arch ISO
 
 Create VM with attached ISO
 
-## Partition the disks
+## 2. Partition the disks
 ```
 cfdisk
 ```
 
 /dev/sda1 - 1G (Linux swap / Solaris)
 
-/dev/sda2 - 8G
+/dev/sda2 - 15G
 
-## Format the partitions
+## 3. Format the partitions
 ```
 mkswap /dev/sda1
 mkfs.ext4 /dev/sda2
 ```
 
-## Mount the file systems
+## 4. Mount the file system
 ```
-mount /dev/sda2 /mnt
 swapon /dev/sda1
+mount /dev/sda2 /mnt
 ```
 
-## Select the mirrors
+## 5. Select the mirrors
 ```
 vim /etc/pacman.d/mirrorlist
 ```
 
 Move the geographically closest mirrors to the top of the list
 
-## pacstrap
+## 6. pacstrap
 ```
 pacstrap /mnt base linux linux-firmware base-devel dhcpcd grub gvim
 ```
 
-## fstab
+## 7. fstab
 ```
 genfstab /mnt >> /mnt/etc/fstab
 ```
 
-## chroot
+## 8. chroot
 ```
 arch-chroot /mnt
 ```
 
-## Localization
+## 9. Localization
 ```
 vim /etc/locale.gen
 ```
@@ -63,13 +64,13 @@ locale-gen
 echo "LANG=en_US.UTF-8"  > /etc/locale.conf
 ```
 
-## Time zone
+## 10. Time zone
 ```
 ln -sf /usr/share/zoneinfo/Europe/Kiev /etc/localtime
 hwclock --systohc --utc
 ```
 
-## Network configuration
+## 11. Network configuration
 ```
 echo "arch" > /etc/hostname
 vim /etc/hosts
@@ -89,27 +90,27 @@ Run the command:
 systemctl enable dhcpcd
 ```
 
-## Root password
+## 12. Root password
 ```
 passwd
 ```
 
-## Boot loader
+## 13. Boot loader
 ```
 grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-## Users
+## 14. Users
 ```
 useradd -m -G wheel vova
 passwd vova
 visudo
 ```
 
-Find this line `# %wheel ALL=(ALL) ALL`, uncomment it and save the file
+Find the line `# %wheel ALL=(ALL) ALL`, uncomment it and save the file
 
-## Final steps
+## 15. Final steps
 ```
 exit
 ```
