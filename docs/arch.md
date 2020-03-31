@@ -39,7 +39,7 @@ Move the geographically closest mirrors to the top of the list
 
 ## 6. pacstrap
 ```
-pacstrap /mnt base linux linux-firmware base-devel dhcpcd grub gvim
+pacstrap /mnt base linux linux-firmware base-devel dhcpcd grub vim
 ```
 
 ## 7. fstab

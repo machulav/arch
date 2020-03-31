@@ -123,7 +123,7 @@ Add to the end of the file:
 
 ```
 # XDG autostart
-exec dex -ae i3
+exec --no-startup-id dex -ae i3
 ```
 
 ## virtualbox
