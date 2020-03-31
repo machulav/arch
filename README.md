@@ -1,4 +1,4 @@
-# Arch Linux setup
+# Personal Arch Linux setup on VirtualVox
 
 ## Docs
 - [Install Arch on VirtualBox](/docs/arch.md)
