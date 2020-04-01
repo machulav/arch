@@ -11,7 +11,6 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
 )
 
 source $ZSH/oh-my-zsh.sh
