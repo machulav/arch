@@ -9,3 +9,6 @@
 - [~/.zprofile](/configs/home/.zprofile)
 - [~/.xinitrc](/configs/home/.xinitrc)
 - [~/.config/i3/config](/configs/home/.config/i3/config)
+- [/etc/hostname](/configs/etc/hostname)
+- [/etc/hosts](/configs/etc/hosts)
+- [/etc/X11/xorg.conf.d/xorg.conf](/configs/etc/X11/xorg.conf.d/xorg.conf)
