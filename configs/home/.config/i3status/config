@@ -23,7 +23,7 @@ load {
 }
 
 memory {
-	format = "<span background='#bf616a'> %used Used</span>"
+	format = "<span background='#bf616a'> %used Used </span>"
   threshold_degraded = "10%"
   format_degraded = "MEMORY: %free"
 }
