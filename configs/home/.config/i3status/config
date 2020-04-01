@@ -1,0 +1,45 @@
+general {
+  output_format = i3bar
+  colors = false
+  interval = 5
+ 	markup = pango
+	color_good = '#2f343f'
+	color_degraded = '#ebcb8b'
+	color_bad = '#ba5e57'
+}
+
+order += "disk /"
+order += "load"
+order += "memory"
+order += "battery all"
+order += "tztime local"
+
+disk "/" {
+  format = "<span background='#a1d569'> %avail Available </span>"
+}
+
+load {
+  format = "<span background='#f59335'> %1min Load </span>"
+}
+
+memory {
+	format = "<span background='#bf616a'> %used Used</span>"
+  threshold_degraded = "10%"
+  format_degraded = "MEMORY: %free"
+}
+
+battery all {
+	last_full_capacity = true
+  format = "<span background='#a3be8c'> %status %percentage %remaining </span>"
+	format_down = "No Battery"
+  status_chr = "Charging"
+  status_bat = "Battery"
+  status_unk = "Unknown"
+  status_full = "Charged"
+	low_threshold = 10
+}
+
+tztime local {
+  format = "<span background='#81a1c1'> %time </span>"
+	format_time = "%a %-d %b %H:%M"
+}
