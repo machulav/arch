@@ -5,4 +5,7 @@
 - [Install and configure apps](/docs/apps.md)
 
 ## Configs
-See [/configs](/configs) folder
+- [~/.zshrc](/configs/home/.zshrc)
+- [~/.zprofile](/configs/home/.zprofile)
+- [~/.xinitrc](/configs/home/.xinitrc)
+- [~/.config/i3/config](/configs/home/.config/i3/config)
