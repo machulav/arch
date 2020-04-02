@@ -144,18 +144,18 @@ bindsym $mod+r mode "resize"
 bar {
   status_command i3status
 	position top
-  colors {
+	colors {
     background #2f343f
     statusline #2f343f
-    separator #2f343f
-
+    separator #2f34
     # colour of border, background, and text
-    focused_workspace       #2f343f #bf616a #d8dee8
-    active_workspace        #2f343f #2f343f #d8dee8
+    focused_workspace       #AC9C75 #AC9C75 #2f343f
+    active_workspace        #AC9C75 #AC9C75 #2f343f
     inactive_workspace      #2f343f #2f343f #d8dee8
-    urgent_workspacei       #2f343f #ebcb8b #2f343f
-  }
+    urgent_workspace        #E1C340 #E1C340 #2f343f
+  }	
 }
+
 
 # xdg autostart
 exec --no-startup-id dex -ae i3
