@@ -145,6 +145,19 @@ reboot
 sudo pacman -S vifm
 ```
 
+## feh
+
+```
+sudo pacman -S feh
+feh --bg-fill ~/wallpapers/reuben-teo-fUZWpaUknyI-unsplash.jpg 
+```
+
+`~/.xinitrc`:
+
+```
+~/.fehbg &
+```
+
 ## Clean unused dependencies
 ```
 sudo pacman -Rns $(pacman -Qdtq)
