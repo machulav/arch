@@ -15,22 +15,22 @@ order += "battery all"
 order += "tztime local"
 
 disk "/" {
-        format = "<span background='#a1d569'> Disk %percentage_used </span>"
+        format = "<span background='#90969A'> Disk %percentage_used </span>"
 }
 
 load {
-        format = "<span background='#f59335'> CPU %1min </span>"
+        format = "<span background='#90969A'> CPU %1min </span>"
 }
 
 memory {
-	format = "<span background='#bf616a'> Memory %percentage_used </span>"
+	format = "<span background='#90969A'> Memory %percentage_used </span>"
         threshold_degraded = "10%"
         format_degraded = "MEMORY: %free"
 }
 
 battery all {
 	last_full_capacity = true
-        format = "<span background='#a3be8c'> %status %percentage %remaining </span>"
+        format = "<span background='#777F76'> %status %percentage %remaining </span>"
 	format_down = "No Battery"
         status_chr = "Charging"
         status_bat = "Battery"
@@ -40,6 +40,6 @@ battery all {
 }
 
 tztime local {
-        format = "<span background='#81a1c1'> %time </span>"
+        format = "<span background='#777F76'> %time </span>"
 	format_time = "%a %-d %b %H:%M"
 }
